@@ -3,13 +3,13 @@
 #
 
 # Name of your site (displayed in the header)
-name: Vritant Jain
+name: Anisha Majumder
 
 # Short bio or description (displayed in the header)
-description: Vritant's personal website
+description: Anisha's Website
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://avatars3.githubusercontent.com/u/2501280
+avatar: https://photos.google.com/photo/AF1QipPMX-Ai8WMBV3UlzNURR7kdaau-VEKII8SKF_vq
 
 #
 # Flags below are optional
@@ -18,12 +18,12 @@ avatar: https://avatars3.githubusercontent.com/u/2501280
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble:
-  email: adarshvritant@gmail.com
-  facebook: adarshvritant
+  email: anishamajumder1302@gmail.com
+  facebook: 
   flickr:
-  github: vritant
+  github: anishamajumder2005
   instagram:
-  linkedin: vritant
+  linkedin: Anisha Majumder
   pinterest:
   rss: # just type anything here for a working RSS icon
   twitter:
@@ -41,7 +41,7 @@ google_analytics: UA-119886026-1
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
-url: vritant.com
+url: http://anishamajumder2005.github.io
 
 # If you're hosting your site at a Project repository on GitHub pages
 # (http://yourusername.github.io/repository-name)
