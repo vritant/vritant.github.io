@@ -13,7 +13,6 @@ import {
   Leaf,
   Beaker,
   Sword,
-  Award,
   ChevronRight,
   Sun,
   Moon
@@ -144,7 +143,7 @@ const App: React.FC = () => {
               <Mail size={20} />
             </a>
             <a 
-              href="tel:+918978618514"
+              href="tel:+918978618514" 
               className={`w-11 h-11 rounded-full border ${iconBorder} ${textColor} flex items-center justify-center ${socialHover} hover:scale-110 transition-all`}
               title="Phone"
             >
@@ -186,33 +185,31 @@ const App: React.FC = () => {
         </div>
 
         {/* Academic Foundations Card (30%) */}
-        <div className={`slide-card p-3 md:p-4 lg:p-6 flex flex-col justify-between ${bgCard3}`}>
-          <div>
-            <h3 className={`text-xl md:text-2xl lg:text-3xl font-black brand-font mb-4 md:mb-5 leading-[0.9] ${textColor} uppercase tracking-tighter`}>
+        <div className={`slide-card px-3 md:px-4 lg:px-8 pt-3 md:pt-4 lg:pt-8 pb-3 lg:pb-4 flex flex-col justify-between ${bgCard3}`}>
+          <div className="flex justify-between items-start mb-5">
+            <h3 className={`text-xl md:text-2xl lg:text-3xl font-black brand-font leading-[0.9] ${textColor} uppercase tracking-tighter`}>
               Academic<br/>Foundations.
             </h3>
-            <div className="space-y-4">
-              {EDUCATION.map((edu, idx) => (
-                <div key={idx} className="flex flex-col group">
-                  <div className="flex justify-between items-start mb-0.5">
-                    <div className="space-y-0.5">
-                      <h4 className={`${textColor} font-black text-[12px] md:text-[13px] lg:text-[15px] uppercase tracking-tight leading-tight group-hover:text-indigo-400 transition-colors`}>
-                        {edu.degree}
-                      </h4>
-                      <span className={`${textColor} font-bold text-[11px] uppercase tracking-widest truncate`}>
-                        {edu.school}
-                      </span>
-                    </div>
-                  </div>
-                  <div className={`flex items-center gap-2 py-0.5 md:py-1 px-1.5 md:px-2 ${achievementBg} rounded border ${achievementBorder} w-fit mt-1`}>
-                    <Award size={8} className="text-amber-500" />
-                    <span className={`text-[8px] ${textColor} font-bold uppercase tracking-widest`}>
+          </div>
+
+          <div className="grid grid-cols-1 gap-x-6 gap-y-0.5 mt-3 lg:mt-4">
+            {EDUCATION.map((edu, idx) => (
+              <div key={idx} className={`flex gap-2 group cursor-default items-center py-1 border-b ${borderColorDivider} last:border-0 lg:border-0`}>
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-col space-y-0.5">
+                    <h4 className={`${textColor} font-black text-[12px] md:text-[13px] lg:text-[15px] uppercase tracking-tight leading-tight group-hover:text-indigo-400 transition-colors`}>
+                      {edu.degree}
+                    </h4>
+                    <span className={`${textColor} font-bold text-[11px] uppercase tracking-widest truncate`}>
+                      {edu.school}
+                    </span>
+                    <span className={`text-[10px] ${textColor} font-bold uppercase tracking-widest`}>
                       {edu.achievement}
                     </span>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -260,7 +257,7 @@ const App: React.FC = () => {
         <div className="md:col-span-6 flex flex-col gap-2.5 md:gap-3">
           <div className="flex justify-between items-end">
             <h3 className={`text-xl md:text-2xl lg:text-3xl font-black brand-font ${textColor} uppercase tracking-tighter leading-[0.9]`}>
-              Articles.
+              Posts.
             </h3>
             <a
               href="https://linkedin.com/in/vritant"
@@ -353,7 +350,6 @@ const App: React.FC = () => {
             <div className="flex items-center gap-2">
               <span className={`brand-font font-black text-xl ${textColor} uppercase`}>Vritant Jain</span>
             </div>
-            <p className={`${textColor} text-[8px] font-black uppercase tracking-[0.6em]`}>Portfolio Systems &copy; {new Date().getFullYear()}</p>
          </div>
          
          <div className={`flex flex-wrap justify-center gap-8 ${textColor} text-[9px] font-black uppercase tracking-[0.4em]`}>

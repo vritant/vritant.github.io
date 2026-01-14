@@ -78,7 +78,7 @@ export const ACHIEVEMENTS = [
 
 export const FEATURED_PROJECT: Project = {
   name: "AI Business Model Canvas",
-  description: "A multi-agent AI native product that helps founders systematically evaluate business ideas using the power of agentic workflows. As seen in the Swiggy case study analysis below.",
+  description: "A multi-agent AI native product that helps founders systematically evaluate business ideas.",
   link: "https://businessmodelcanvas.vritant.com",
   tags: ["Multi Agent Architecture", "LLM Fine-tuning", "Idea Evaluation", "Product Strategy"],
   imageUrl: bmcImage
