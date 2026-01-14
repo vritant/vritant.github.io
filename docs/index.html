@@ -12,26 +12,47 @@
     <style>
         body {
             font-family: 'Lato', sans-serif;
-            background: radial-gradient(circle at top left, #020617 0%, #020617 40%, #020617 100%);
-            color: #F9FAFB;
             margin: 0;
             padding: 20px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        body.dark-theme {
+            background: radial-gradient(circle at top left, #020617 0%, #020617 40%, #020617 100%);
+            color: #F9FAFB;
+        }
+        body.light-theme {
+            background: radial-gradient(circle at top left, #ffffff 0%, #f9fafb 40%, #f3f4f6 100%);
+            color: #111827;
         }
         h1, h2, h3, .brand-font {
             font-family: 'Montserrat', sans-serif;
         }
         .slide-card {
-            background: #050816;
             border-radius: 24px;
             box-shadow: 0 18px 45px -18px rgba(15, 23, 42, 0.9);
             overflow: hidden;
+            transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        body.dark-theme .slide-card {
+            background: #050816;
             border: 1px solid rgba(148, 163, 184, 0.22);
+            box-shadow: 0 18px 45px -18px rgba(15, 23, 42, 0.9);
+        }
+        body.light-theme .slide-card {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 18px 45px -18px rgba(0, 0, 0, 0.1);
         }
         .featured-bmc-card {
             position: relative;
             overflow: hidden;
             border-radius: 24px;
+        }
+        body.dark-theme .featured-bmc-card {
             background: radial-gradient(circle at top left, #020617, #020617);
+        }
+        body.light-theme .featured-bmc-card {
+            background: radial-gradient(circle at top left, #ffffff, #f9fafb);
         }
         .gradient-accent {
             background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
@@ -52,11 +73,18 @@
         ::-webkit-scrollbar {
             width: 6px;
         }
-        ::-webkit-scrollbar-track {
+        body.dark-theme ::-webkit-scrollbar-track {
             background: #0A0A0A;
         }
-        ::-webkit-scrollbar-thumb {
+        body.light-theme ::-webkit-scrollbar-track {
+            background: #f3f4f6;
+        }
+        body.dark-theme ::-webkit-scrollbar-thumb {
             background: #333333;
+            border-radius: 10px;
+        }
+        body.light-theme ::-webkit-scrollbar-thumb {
+            background: #9ca3af;
             border-radius: 10px;
         }
     </style>
@@ -71,7 +99,7 @@
   }
 }
 </script>
-  <script type="module" crossorigin src="/assets/index-C1ll6F9h.js"></script>
+  <script type="module" crossorigin src="/assets/index-qNgHmt44.js"></script>
 </head>
 <body>
     <div id="root"></div>
