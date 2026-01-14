@@ -24,10 +24,10 @@ const SimpleMarkdown: React.FC<{ content: string; small?: boolean; isDark: boole
   const lines = content.split('\n');
   const textColor = isDark ? 'text-white' : 'text-black';
   return (
-    <div className={small ? "space-y-4" : "space-y-6"}>
+    <div className={small ? "space-y-3 md:space-y-4" : "space-y-5 md:space-y-6"}>
       {lines.map((line, i) => {
         if (line.startsWith('# ')) return (
-          <h1 key={i} className={`${small ? "text-3xl lg:text-4xl" : "text-5xl lg:text-7xl"} font-black mb-4 tracking-tighter leading-[0.85] ${textColor} uppercase brand-font`}>
+          <h1 key={i} className={`${small ? "text-2xl md:text-3xl lg:text-4xl" : "text-4xl md:text-5xl lg:text-7xl"} font-black mb-3 md:mb-4 tracking-tighter leading-[0.95] md:leading-[0.85] ${textColor} uppercase brand-font`}>
             {line.replace('# ', '')}
           </h1>
         );
@@ -35,7 +35,7 @@ const SimpleMarkdown: React.FC<{ content: string; small?: boolean; isDark: boole
         
         const parts = line.split(/(\*\*.*?\*\*)/g);
         return (
-          <p key={i} className={`${small ? "text-base lg:text-lg" : "text-xl lg:text-2xl"} ${textColor} font-light leading-snug`}>
+          <p key={i} className={`${small ? "text-sm md:text-base lg:text-lg" : "text-lg md:text-xl lg:text-2xl"} ${textColor} font-light leading-snug`}>
             {parts.map((part, j) => {
               if (part.startsWith('**') && part.endsWith('**')) {
                 return <strong key={j} className={`${textColor} font-bold`}>{part.slice(2, -2)}</strong>;
@@ -112,7 +112,7 @@ const App: React.FC = () => {
   const dotBg = isDark ? 'bg-slate-800' : 'bg-gray-400';
 
   return (
-    <div className="max-w-[1600px] mx-auto space-y-3 py-2 px-4 md:py-4 md:px-8 pb-16">
+    <div className="max-w-[1600px] mx-auto space-y-3 py-2 px-3 md:px-8 md:py-4 pb-14 md:pb-16">
       {/* Theme Toggle Button */}
       <button
         onClick={toggleTheme}
@@ -125,7 +125,7 @@ const App: React.FC = () => {
       {/* Row 1: Intro (40%) & Professional Journey / Education (30% each) */}
       <div className="grid grid-cols-1 md:grid-cols-[2fr_1.5fr_1.5fr] gap-3 items-stretch">
         {/* Intro Tile (40%) */}
-        <div className={`slide-card p-4 lg:p-6 flex flex-col justify-center ${bgCard} border-indigo-500/10`}>
+        <div className={`slide-card p-3 md:p-4 lg:p-6 flex flex-col justify-center ${bgCard} border-indigo-500/10`}>
           <SimpleMarkdown content={BIO_MARKDOWN} small isDark={isDark} />
           <div className={`flex flex-wrap gap-3 mt-5 pt-4 border-t ${borderColor}`}>
             <a 
@@ -154,9 +154,9 @@ const App: React.FC = () => {
         </div>
 
         {/* Journey Card (30%) */}
-        <div className={`slide-card px-4 lg:px-8 pt-4 lg:pt-8 pb-3 lg:pb-4 flex flex-col justify-between ${bgCard2}`}>
+        <div className={`slide-card px-3 md:px-4 lg:px-8 pt-3 md:pt-4 lg:pt-8 pb-3 lg:pb-4 flex flex-col justify-between ${bgCard2}`}>
           <div className="flex justify-between items-start mb-5">
-            <h3 className={`text-2xl lg:text-3xl font-black brand-font leading-[0.9] ${textColor} uppercase tracking-tighter`}>
+            <h3 className={`text-xl md:text-2xl lg:text-3xl font-black brand-font leading-[0.9] ${textColor} uppercase tracking-tighter`}>
               Professional<br/>Journey.
             </h3>
           </div>
@@ -186,9 +186,9 @@ const App: React.FC = () => {
         </div>
 
         {/* Academic Foundations Card (30%) */}
-        <div className={`slide-card p-4 lg:p-6 flex flex-col justify-between ${bgCard3}`}>
+        <div className={`slide-card p-3 md:p-4 lg:p-6 flex flex-col justify-between ${bgCard3}`}>
           <div>
-            <h3 className={`text-2xl lg:text-3xl font-black brand-font mb-5 leading-[0.9] ${textColor} uppercase tracking-tighter`}>
+            <h3 className={`text-xl md:text-2xl lg:text-3xl font-black brand-font mb-4 md:mb-5 leading-[0.9] ${textColor} uppercase tracking-tighter`}>
               Academic<br/>Foundations.
             </h3>
             <div className="space-y-4">
@@ -196,7 +196,7 @@ const App: React.FC = () => {
                 <div key={idx} className="flex flex-col group">
                   <div className="flex justify-between items-start mb-0.5">
                     <div className="space-y-0.5">
-                      <h4 className={`${textColor} font-black text-[13px] lg:text-[15px] uppercase tracking-tight leading-tight group-hover:text-indigo-400 transition-colors`}>
+                      <h4 className={`${textColor} font-black text-[12px] md:text-[13px] lg:text-[15px] uppercase tracking-tight leading-tight group-hover:text-indigo-400 transition-colors`}>
                         {edu.degree}
                       </h4>
                       <span className={`${textColor} font-bold text-[11px] uppercase tracking-widest truncate`}>
@@ -204,7 +204,7 @@ const App: React.FC = () => {
                       </span>
                     </div>
                   </div>
-                  <div className={`flex items-center gap-2 py-1 px-2 ${achievementBg} rounded border ${achievementBorder} w-fit mt-1`}>
+                  <div className={`flex items-center gap-2 py-0.5 md:py-1 px-1.5 md:px-2 ${achievementBg} rounded border ${achievementBorder} w-fit mt-1`}>
                     <Award size={8} className="text-amber-500" />
                     <span className={`text-[8px] ${textColor} font-bold uppercase tracking-widest`}>
                       {edu.achievement}
@@ -222,13 +222,13 @@ const App: React.FC = () => {
         {/* Featured Project (Left Half) */}
         <a
           href={FEATURED_PROJECT.link}
-          className="md:col-span-6 slide-card featured-bmc-card p-4 lg:p-10 relative overflow-hidden grid grid-cols-1 md:grid-cols-3 gap-6 group"
+          className="md:col-span-6 slide-card featured-bmc-card p-3 md:p-4 lg:p-10 relative overflow-hidden grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 group"
         >
           <div className="md:col-span-2 flex flex-col justify-center space-y-4 z-10">
-            <h3 className={`text-2xl lg:text-4xl font-black brand-font ${textColor} uppercase tracking-tighter leading-none`}>
+            <h3 className={`text-xl md:text-2xl lg:text-4xl font-black brand-font ${textColor} uppercase tracking-tighter leading-none`}>
               {FEATURED_PROJECT.name}
             </h3>
-            <p className={`text-sm ${textColor} leading-relaxed font-light`}>
+            <p className={`text-xs md:text-sm ${textColor} leading-relaxed font-light`}>
               {FEATURED_PROJECT.description}
             </p>
             <div className="flex flex-wrap gap-2">
@@ -257,9 +257,9 @@ const App: React.FC = () => {
         </a>
 
         {/* Writing Cards (Right Half) */}
-        <div className="md:col-span-6 flex flex-col gap-3">
+        <div className="md:col-span-6 flex flex-col gap-2.5 md:gap-3">
           <div className="flex justify-between items-end">
-            <h3 className={`text-2xl lg:text-3xl font-black brand-font ${textColor} uppercase tracking-tighter leading-[0.9]`}>
+            <h3 className={`text-xl md:text-2xl lg:text-3xl font-black brand-font ${textColor} uppercase tracking-tighter leading-[0.9]`}>
               Articles.
             </h3>
             <a
@@ -307,10 +307,10 @@ const App: React.FC = () => {
       <div className={`slide-card overflow-hidden ${bgCard}`}>
         <button 
           onClick={() => setShowHobbies(!showHobbies)}
-          className={`w-full p-4 lg:p-10 flex items-center justify-between group ${cardHover} transition-all text-left`}
+          className={`w-full p-3 md:p-4 lg:p-10 flex items-center justify-between group ${cardHover} transition-all text-left`}
         >
           <div>
-            <h3 className={`text-2xl lg:text-4xl font-black brand-font ${textColor} uppercase tracking-tighter leading-none`}>Personal Archetypes.</h3>
+            <h3 className={`text-xl md:text-2xl lg:text-4xl font-black brand-font ${textColor} uppercase tracking-tighter leading-none`}>Personal Archetypes.</h3>
             <p className={`text-[8px] lg:text-[10px] ${textColor} mt-2 font-black uppercase tracking-[0.6em] max-w-lg`}>Engineered creativity outside the terminal.</p>
           </div>
           <div className={`h-8 w-8 lg:h-12 lg:w-12 rounded-full border-2 ${expandBorder} flex items-center justify-center transition-all ${showHobbies ? expandButton : `${expandButtonHover} group-hover:scale-105`}`}>
@@ -319,10 +319,10 @@ const App: React.FC = () => {
         </button>
 
         {showHobbies && (
-          <div className={`p-4 lg:p-10 ${hobbiesBg} border-t ${hobbiesBorder}`}>
+          <div className={`p-3 md:p-4 lg:p-10 ${hobbiesBg} border-t ${hobbiesBorder}`}>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
               {HOBBIES.map((hobby, i) => (
-                <div key={i} className={`slide-card p-4 lg:p-5 ${bgCard2} flex flex-col h-full`}>
+                <div key={i} className={`slide-card p-3 md:p-4 lg:p-5 ${bgCard2} flex flex-col h-full`}>
                   <div>
                     <div className="flex items-center justify-between mb-4">
                       <div className={`p-2 ${tagBg} rounded-xl text-indigo-500`}>
