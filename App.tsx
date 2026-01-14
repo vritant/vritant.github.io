@@ -144,7 +144,7 @@ const App: React.FC = () => {
               <Mail size={20} />
             </a>
             <a 
-              href="tel:+919881122114" 
+              href="tel:+918978618514"
               className={`w-11 h-11 rounded-full border ${iconBorder} ${textColor} flex items-center justify-center ${socialHover} hover:scale-110 transition-all`}
               title="Phone"
             >
