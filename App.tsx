@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { 
   ArrowUpRight, 
   ExternalLink, 
+  FileDown,
   Linkedin, 
   Mail, 
   Phone,
@@ -134,6 +135,14 @@ const App: React.FC = () => {
               title="LinkedIn"
             >
               <Linkedin size={20} />
+            </a>
+            <a 
+              href="/resume.pdf" 
+              download="VritantJainResume.pdf"
+              className={`w-11 h-11 rounded-full border ${iconBorder} ${textColor} flex items-center justify-center ${socialHover} hover:scale-110 transition-all`}
+              title="Download Resume"
+            >
+              <FileDown size={20} />
             </a>
             <a 
               href="mailto:adarshvritant@gmail.com" 

@@ -14,6 +14,22 @@ export default defineConfig(({ mode }) => {
     plugins: [
       react(),
       {
+        name: 'resume-redirect',
+        configureServer(server) {
+          const handler = (req: { url?: string }, res: { statusCode: number; setHeader: (name: string, value: string) => void; end: () => void }, next: () => void) => {
+            const path = req.url?.split('?')[0];
+            if (path === '/resume' || path === '/resume/') {
+              res.statusCode = 302;
+              res.setHeader('Location', '/resume.pdf');
+              res.end();
+              return;
+            }
+            next();
+          };
+          server.middlewares.stack.unshift({ route: '', handle: handler });
+        },
+      },
+      {
         name: 'copy-cname',
         closeBundle() {
           // Copy CNAME file to docs directory after build
